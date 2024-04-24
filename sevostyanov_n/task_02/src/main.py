@@ -2,12 +2,12 @@ import argparse
 from tree import print_tree
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Отображение иерархии файлов и папок в указанной директории')
-    parser.add_argument('directory', nargs='?', default='.', help='Путь к директории (по умолчанию - текущая директория)')
-    parser.add_argument('-L', type=int, metavar='level', help='Максимальный уровень вложенности')
-    parser.add_argument('--symlinks', action='store_true', help='Показать символические ссылки')
-    parser.add_argument('--hidden', action='store_true', help='Показать скрытые файлы и папки')
+    parser = argparse.ArgumentParser(description='РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РёРµСЂР°СЂС…РёРё С„Р°Р№Р»РѕРІ Рё РїР°РїРѕРє РІ СѓРєР°Р·Р°РЅРЅРѕР№ РґРёСЂРµРєС‚РѕСЂРёРё')
+    parser.add_argument('directory', nargs='?', default='.', help='РџСѓС‚СЊ Рє РґРёСЂРµРєС‚РѕСЂРёРё (РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ - С‚РµРєСѓС‰Р°СЏ РґРёСЂРµРєС‚РѕСЂРёСЏ)')
+    parser.add_argument('-L', type=int, metavar='level', help='РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СѓСЂРѕРІРµРЅСЊ РІР»РѕР¶РµРЅРЅРѕСЃС‚Рё')
+    parser.add_argument('--symlinks', action='store_true', help='РџРѕРєР°Р·Р°С‚СЊ СЃРёРјРІРѕР»РёС‡РµСЃРєРёРµ СЃСЃС‹Р»РєРё')
+    parser.add_argument('--hidden', action='store_true', help='РџРѕРєР°Р·Р°С‚СЊ СЃРєСЂС‹С‚С‹Рµ С„Р°Р№Р»С‹ Рё РїР°РїРєРё')
     args = parser.parse_args()
 
-    print("Иерархия директории:")
+    print("РРµСЂР°СЂС…РёСЏ РґРёСЂРµРєС‚РѕСЂРёРё:")
     print_tree(args.directory, max_level=args.L, show_symlinks=args.symlinks, show_hidden=args.hidden)
