@@ -6,7 +6,7 @@ def print_tree(directory, level=0, max_level=None, symlink_count=0, color_index=
     try:
         items = os.listdir(directory)
     except PermissionError:
-        print(f"???????? ? ???????: {directory}")
+        print(f"Отказано в доступе: {directory}")
         return
 
     items.sort()
